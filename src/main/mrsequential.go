@@ -14,7 +14,7 @@ import "log"
 import "io/ioutil"
 import "sort"
 
-// for sorting by key.
+// define a new type, meaning a slice of KeyValue, for sorting by key.
 type ByKey []mr.KeyValue
 
 // for sorting by key.
@@ -35,7 +35,7 @@ func main() {
 	// pass it to Map,
 	// accumulate the intermediate Map output.
 	//
-	intermediate := []mr.KeyValue{}
+	intermediate := []mr.KeyValue{} // initialize a KeyValue slice
 	for _, filename := range os.Args[2:] {
 		file, err := os.Open(filename)
 		if err != nil {
